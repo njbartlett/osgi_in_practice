@@ -1,0 +1,2 @@
+# mailbox_api.bnd
+Export-Package: org.osgi.book.reader.api

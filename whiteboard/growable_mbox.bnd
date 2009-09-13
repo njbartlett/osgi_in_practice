@@ -1,0 +1,4 @@
+Bundle-Activator=org.osgi.book.reader.asyncmailbox.GrowableMailboxActivator
+Private-Package=org.osgi.book.reader.asyncmailbox,\
+	org.osgi.book.reader.fixedmailbox,\
+	org.osgi.book.utils

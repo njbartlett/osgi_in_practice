@@ -1,0 +1,3 @@
+# mailbox_gui.bnd
+Private-Package: org.osgi.book.reader.gui
+Bundle-Activator: org.osgi.book.reader.gui.ScannerFrameActivator

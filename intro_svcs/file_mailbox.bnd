@@ -1,0 +1,3 @@
+# file_mailbox.bnd
+Private-Package: org.osgi.book.reader.filemailbox
+Bundle-Activator: org.osgi.book.reader.filemailbox.FileMailboxActivator

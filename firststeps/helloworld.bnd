@@ -1,0 +1,3 @@
+# helloworld.bnd
+Private-Package: org.osgi.tutorial
+Bundle-Activator: org.osgi.tutorial.HelloWorldActivator

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="book_whiteboard" default="bundle">
+
+    <!-- Import machine-specific settings -->
+    <property file="build.properties"/>
+
+    <!-- Setup build paths -->
+    <property name="build_dir" value="build"/>
+    <property name="build_classes_dir" value="${build_dir}/classes"/>
+    <property name="build_bundles_dir" value="${build_dir}/bundles"/>
+    <property name="build_test_dir" value="${build_dir}/tests"/>
+
+    <!-- Set a classpath for the OSGi libraries -->
+    <path id="osgilibs">
+        <pathelement location="${felix.home}/bin/felix.jar"/>
+        <fileset dir="bundles" includes="*.jar"/>
+    </path>
+
+    <!-- Set a classpath for JUnit tests -->
+    <path id="test_classpath">
+        <path refid="osgilibs"/>
+        <pathelement location="${junit.path}"/>
+    </path>
+
+    <!-- Load the bnd custom task -->
+    <taskdef resource="aQute/bnd/ant/taskdef.properties"
+             classpath="${bnd.path}"/>
+
+    <!-- TARGET: clean; cleans all build outputs -->
+    <target name="clean" description="Clean all build outputs">
+        <delete dir="${build_dir}"/>
+    </target>
+
+    <!-- TARGET: compile; compiles Java sources -->
+    <target name="compile" description="Compile Java sources">
+        <mkdir dir="${build_classes_dir}"/>
+    	<javac srcdir="../dependencies/src" destdir="${build_classes_dir}" debug="true">
+    		<classpath>
+    			<path refid="osgilibs"/>
+			</classpath>
+		</javac>
+	    <javac srcdir="src"
+	    	   destdir="${build_classes_dir}"
+               debug="true">
+	    	<classpath>
+                <path refid="osgilibs"/>
+	    		<path location="${build_classes_dir}"/>
+	    	</classpath>
+    	</javac>
+
+        <mkdir dir="${build_test_dir}"/>
+        <javac srcdir="test" destdir="${build_test_dir}"
+               debug="true" classpathref="test_classpath"/>
+    </target>
+
+    <!-- TARGET: bundle; generates bundle JARs using bnd -->
+    <target name="bundle" depends="compile"
+            description="Build bundles">
+        <mkdir dir="${build_bundles_dir}"/>
+        <!-- Convert an ANT fileset to a flat list of files -->
+        <pathconvert property="bnd.files" pathsep=", ">
+            <fileset dir="${basedir}">
+                <include name="*.bnd"/>
+            </fileset>
+        </pathconvert>
+        <bnd classpath="${build_classes_dir}" failok="false"
+            output="${build_bundles_dir}" files="${bnd.files}"/>
+    </target>
+</project>

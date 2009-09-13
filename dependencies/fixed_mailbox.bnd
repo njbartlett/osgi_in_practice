@@ -1,0 +1,2 @@
+# fixed_mailbox.bnd
+Private-Package: org.osgi.book.reader.fixedmailbox

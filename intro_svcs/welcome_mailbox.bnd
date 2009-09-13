@@ -1,0 +1,3 @@
+# welcome_mailbox.bnd
+Private-Package: org.osgi.book.reader.fixedmailbox;-split-package:=merge-first
+Bundle-Activator: org.osgi.book.reader.fixedmailbox.WelcomeMailboxActivator2

@@ -1,0 +1,3 @@
+# random_feed.bnd
+Private-Package: org.osgi.book.trading.feeds,org.osgi.book.utils
+Bundle-Activator: org.osgi.book.trading.feeds.RandomPriceFeedActivator

@@ -1,0 +1,2 @@
+Bundle-Activator=org.osgi.book.logreader.LogReaderCommandActivator
+Private-Package=org.osgi.book.logreader
