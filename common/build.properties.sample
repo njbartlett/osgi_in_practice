@@ -1,0 +1,8 @@
+# Path to the Felix installation directory
+felix.home=/path/to/felix-1.0.3
+
+# Location of the JUnit JAR
+junit.path=/path/to/junit/junit-4.4.jar
+
+#Location of bnd.jar
+bnd.path=/path/to/bnd/bnd.jar
