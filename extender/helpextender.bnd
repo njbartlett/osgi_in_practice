@@ -1,0 +1,3 @@
+update 1# helpextender.bnd
+Private-Package: org.osgi.book.help.extender, org.osgi.book.utils
+Bundle-Activator: org.osgi.book.help.extender.HelpExtenderActivator

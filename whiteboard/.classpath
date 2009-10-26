@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="bundles/osgi.cmpn.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Equinox"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/dependencies"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Equinox 3.5.1"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

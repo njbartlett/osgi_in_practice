@@ -1,0 +1,5 @@
+# mbox_svc_extender.bnd
+Private-Package: org.osgi.book.extender.service,\
+	org.osgi.book.utils
+Bundle-Activator:\
+    org.osgi.book.extender.service.MailboxServiceExtenderActivator

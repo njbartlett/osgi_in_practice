@@ -1,0 +1,3 @@
+# help_sample.bnd
+Help-Index: docs/index.properties
+Include-Resource: docs=resources/help_sample
